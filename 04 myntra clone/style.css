@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.options {
+    padding: 3px;
+    margin: 5px;
+}
+
+.but {
+    margin-right: 10px;
+    height: 30px;
+    border: none;
+    font-size: 18px;
+    background-color: white;
+}
+
+.searchbar {
+    width: 300px;
+    height: 30px;
+    border: 2px solid green;
+}
+
+.pro {
+    margin-right: 10px;
+    height: 30px;
+    border: none;
+    font-size: 18px;
+    background-color: white;
+}
+.middle{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(121, 235, 84);
+}
+.card{
+    background-color: rgb(243, 243, 107);
+    margin: 20px;
+}
+
+.footImg{
+    width: 100vw;
+    height: 60vh;
+}
