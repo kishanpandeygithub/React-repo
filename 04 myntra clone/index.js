@@ -17,7 +17,7 @@ const element1 = <h1>Hello I am Kishan Pandey</h1>;
 //     age:"32"
 // }
 function Greet(props) {
-    return <h2>Ram ram bhi {props.name} {props.age} ne</h2>
+    return <h2 >Ram ram bhi {props.name} {props.age} ne</h2>
 }
 // we have many methood to call the function this is the form of the jsx
 //but the condetion is that the first letter of  the function should be in the capatial 
