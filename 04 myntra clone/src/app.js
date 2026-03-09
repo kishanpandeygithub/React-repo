@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React , { useState } from "react";
 import ReactDOM from "react-dom/client"
 import Card from "./component/card";
 import Footer from "./component/Fotter";
@@ -14,17 +14,18 @@ import { useState } from "react";
 function App() {
     let [A, setA] = useState(arr);
     function sortArray() {
-        arr.sort((a, b) => a.price - b.price);
+        A.sort((a, b) => a.price - b.price);
         setA([...A]);
     };
-    function PriceAbove500(){
-        let Arr =arr.filter((value)=> value.price>=500 )
-        setA([Arr]);
+    function PriceAbove500() {
+        const  Arr = A.filter((value) => value.price >= 500)
+        setA(Arr);
     }
     return (
         <>
+           
             <Header />
-            <button className="sort" onClick={sortArray}>Sort by price</button>
+            <button  className="sort" onClick={sortArray}>Sort by price</button>
             <button className="sort" onClick={PriceAbove500}>PriceAbove500</button>
             <div className="middle" style={{ display: "flex", flexWrap: "wrap" }}>
                 {
@@ -34,6 +35,8 @@ function App() {
                 }
             </div>
             <Footer />
+
+            
         </>
     )
 }
