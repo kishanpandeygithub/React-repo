@@ -11,19 +11,19 @@ function PasswordGenerator() {
         if (numberChanged)
             str += '0123456789';
         if (charcterChanged)
-            str +="!@#$%^&*+_><!@#$%^&*(+_)(*&^%$#@"
+            str += "!@#$%^&*+_><!@#$%^&*(+_)(*&^%$#@"
         let pass = "";
         for (let i = 0; i < length; i++) {
             let ran = Math.floor(Math.random() * str.length);
             pass += str[ran];
         }
         setPassword(pass);
-    } ,[length, numberChanged, charcterChanged])
-    
+    }, [length, numberChanged, charcterChanged])
+
 
     useEffect(() => {
         generatePassword();
-    },[generatePassword])
+    }, [generatePassword])
 
     return (
         <>
@@ -31,14 +31,15 @@ function PasswordGenerator() {
             <div className="second">
                 <input type="range" min={5} max={50} value={length} onChange={(e) => setLength(e.target.value)}></input>
                 <label>Length is {length}</label>
-                <input id="number" type="checkbox" defaultChecked={numberChanged} onChange={(e) => { setNumberChanged(!numberChanged) }}></input>
+                <input id="number" type="checkbox" checked={numberChanged} onChange={(e) => { setNumberChanged(!numberChanged) }}></input>
                 <label htmlFor="number">Number</label>
-                <input id="charcter" type="checkbox" defaultChecked={charcterChanged} onChange={(e) => { setCharcterChanged(!charcterChanged) }}></input>
+                <input id="charcter" type="checkbox" checked={charcterChanged} onChange={(e) => { setCharcterChanged(!charcterChanged) }}></input>
                 <label htmlFor="charcter">Charcter</label>
             </div>
         </>
     )
 }
+
 
 const reactroot = ReactDom.createRoot(document.getElementById("root"));
 reactroot.render(<PasswordGenerator />);

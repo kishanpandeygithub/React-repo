@@ -18,19 +18,31 @@ import ReactDom from "react-dom/client";
 
 //this is the project of the stopwatch
 function StopWatch() {
-    const [Time , setTime] =useState(0);
-    function start(){
-        
+    const [time, setTime] = useState(0);
+    const [isRunning, setRunning] = useState(false);
+    let IntervalRef = useRef(null);
+    function start() {
+        if (!isRunning) {
+            IntervalRef.current = setInterval(() => {
+                setTime((prevTime) => prevTime + 1);
+            }, 1000);
+            setRunning(true);
+        }
     }
-    function stop(){
-
-    }   
-    function reset(){
-
+    function stop() {
+        clearInterval(IntervalRef.current);
+        IntervalRef.current = null;
+        setRunning(false);
+    }
+    function reset() {
+        clearInterval(IntervalRef.current);
+        IntervalRef.current = null;
+        setTime(0);
+        setRunning(false);
     }
     return (
         <div className="box">
-            <h1 className="text">StopWatch Is :{Time}</h1>
+            <h1 className="text">StopWatch Is :{time}</h1>
             <button className="btn" onClick={start}>Start</button>
             <button className="btn" onClick={stop}>Stop</button>
             <button className="btn" onClick={reset}>Reset</button>
