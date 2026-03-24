@@ -1,0 +1,24 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: aqua;
+}
+
+
+#box{
+    width: 60vw;
+    height: 60vh;
+    background-color: rgb(43, 226, 98);
+    /* display: flex; */
+    text-align: center;
+    padding: 1px;
+}
+
+#text{
+    color: white;
+}

@@ -1,8 +1,7 @@
-import { useState } from "react";
-function Decrement() {
+function Decrement({ counts,setCounts}) {
     return (
         <>
-            <button onClick={() => setCount(count - 1)}>Decrement</button>
+            <button onClick={() => setCounts(counts - 1)}>Decrement</button>
         </>
     )
 }

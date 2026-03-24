@@ -1,20 +1,8 @@
 import React, {useCallback , useEffect, useState } from "react";
-
+import UseFetch from "../useFetch";
 function Body() {
-    const [numberofprofile, setnumberofprofile] = useState("");
-    const [Profile, setProfile] = useState([]);
-
-    const GenerateProfile = useCallback(async function (count) {
-        const ran = Math.floor(Math.random() * 6000);
-        const response = await fetch(`https://api.github.com/users?since=${ran}&per_page=${count}`);
-        const data = await response.json();
-        setProfile(data);
-    } ,[]);
-
-    useEffect(() => {
-        GenerateProfile(10);
-    }, []);
-
+    
+    const {numberofprofile , GenerateProfile , setnumberofprofile , Profile} =UseFetch();
     return (
         <div className="but">
             <input className="input" type="text" value={numberofprofile} onChange={(e) => setnumberofprofile(e.target.value)}></input>
